@@ -1,0 +1,42 @@
+{
+  "name": "clearwing",
+  "description": "Node- and browser-side IRC client library",
+  "version": "0.0.1",
+  "homepage": "https://github.com/rummik/clearwing",
+  "author": {
+    "name": "rummik",
+    "email": "r@9k1.us"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rummik/clearwing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rummik/clearwing/issues"
+  },
+  "licenses": [
+    {
+      "type": "MPL",
+      "url": "https://github.com/rummik/clearwing/blob/master/LICENSE-MPL"
+    }
+  ],
+  "main": "lib/clearwing",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "underscore": ""
+  },
+  "devDependencies": {
+    "grunt": "git://github.com/gruntjs/grunt.git",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-jshint": "~0.1.0",
+    "grunt-contrib-watch": "~0.1.4",
+    "grunt-contrib-nodeunit": "~0.1.1",
+    "grunt-contrib-jsdoc": "~0.2.2"
+  },
+  "keywords": []
+}
