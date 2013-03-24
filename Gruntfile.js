@@ -21,17 +21,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		uglify: {
-			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-			},
-
-			dist: {
-				src: 'lib/**/*.js',
-				dest: 'dist/<%= pkg.name %>.js'
-			}
-		},
-
 		nodeunit: {
 			dist: ['test/**/*_test.js']
 		},
@@ -67,15 +56,13 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 	grunt.loadNpmTasks('grunt-contrib-jsdoc');
 
 	// Default task.
-	grunt.registerTask('default', ['test', 'min', 'doc']);
-	grunt.registerTask('min', ['uglify']);
+	grunt.registerTask('default', ['test', 'doc']);
 	grunt.registerTask('test', ['jshint', 'nodeunit']);
 	grunt.registerTask('doc', ['jsdoc']);
 };
