@@ -28,7 +28,9 @@ module.exports = function(grunt) {
 		jsdoc: {
 			dist: {
 				src: ['lib/**/*.js', 'test/**/*_test.js'],
-				dest: 'docs'
+				options: {
+					destination: 'docs'
+				}
 			}
 		 },
 
@@ -59,7 +61,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
-	grunt.loadNpmTasks('grunt-contrib-jsdoc');
+	grunt.loadNpmTasks('grunt-jsdoc');
 
 	// Default task.
 	grunt.registerTask('default', ['test', 'doc']);
