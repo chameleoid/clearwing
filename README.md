@@ -1,4 +1,4 @@
-# Clearwing [![Dependency Status](https://gemnasium.com/rummik/clearwing.png)](https://gemnasium.com/rummik/clearwing) [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
+# Clearwing [![Build Status](https://travis-ci.org/rummik/clearwing.png?branch=master)](https://travis-ci.org/rummik/clearwing) [![Dependency Status](https://gemnasium.com/rummik/clearwing.png)](https://gemnasium.com/rummik/clearwing) [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
 
 Server- and browser-side IRC client library
 
