@@ -1,4 +1,4 @@
-# Clearwing [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
+# Clearwing [![Dependency Status](https://gemnasium.com/rummik/clearwing.png)](https://gemnasium.com/rummik/clearwing) [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
 
 Server- and browser-side IRC client library
 
