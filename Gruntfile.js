@@ -12,12 +12,12 @@ module.exports = function(grunt) {
 
 			dist: {
 				files: '<%= jshint.dist %>',
-				tasks: ['jshint:dist', 'mochacli:test']
+				tasks: ['jshint:dist', 'mochacli:test', 'karma:unit:run']
 			},
 
 			test: {
 				files: '<%= jshint.test %>',
-				tasks: ['jshint:test', 'mochacli:test']
+				tasks: ['jshint:test', 'mochacli:test', 'karma:unit:run']
 			}
 		},
 
