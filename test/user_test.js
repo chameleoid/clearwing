@@ -1,54 +1,52 @@
-var Clearwing = require('../lib/clearwing.js');
-
-/*
-	======== A Handy Little Nodeunit Reference ========
-	https://github.com/caolan/nodeunit
-
-	Test methods:
-		test.expect(numAssertions)
-		test.done()
-	Test assertions:
-		test.ok(value, [message])
-		test.equal(actual, expected, [message])
-		test.notEqual(actual, expected, [message])
-		test.deepEqual(actual, expected, [message])
-		test.notDeepEqual(actual, expected, [message])
-		test.strictEqual(actual, expected, [message])
-		test.notStrictEqual(actual, expected, [message])
-		test.throws(block, [error], [message])
-		test.doesNotThrow(block, [error], [message])
-		test.ifError(value)
-*/
+var Clearwing = require('../lib/clearwing.js'),
+    should    = require('should');
 
 var client, network, user;
-exports['user'] = {
-	setUp: function(done) {
+describe('Channel', function() {
+	before(function() {
 		client = new Clearwing();
 		network = client.network('Foo');
-		done();
-	},
+	});
 
-	'user initialization': function(test) {
-		test.expect(2);
-		test.equal(network.users.length, 0, 'should have no users');
-		user = network.user('Foo');
-		user = network.user('foo');
-		test.equal(network.users.length, 1, 'should have one user');
-		test.done();
-	},
+	describe('instantiation via Network#user', function() {
+		it('should be case insensitive', function() {
+			var user1 = network.user('Foo'),
+			    user2 = network.user('foo');
 
-	'set and get data': function(test) {
-		test.expect(4);
+			user1.should.equal(user2);
+		});
 
-		test.equal(user.get('foo'), undefined);
-		user.set('foo', 'bar');
-		test.equal(user.get('foo'), 'bar');
+		it('should instantiate multiple users', function() {
+			var user1 = network.user('foo'),
+			    user2 = network.user('bar');
 
-		user = network.user('foo');
-		test.equal(network.get('user.foo bah'), undefined);
-		user.set('bah', 'bar');
-		test.equal(network.get('user.foo bah'), 'bar');
+			user1.should.not.eql(user2);
+		});
+	});
 
-		test.done();
-	}
-};
+	describe('#get and #set', function() {
+		before(function() {
+			user = network.user('foo');
+		});
+
+		it('should return undefined for undefined properties', function() {
+			should.strictEqual(undefined, user.get('foo'));
+			should.notStrictEqual(null, user.get('foo'));
+		});
+
+		it('should let you set and retrieve values', function() {
+			user.set('foo', 'bar');
+			user.get('foo').should.equal('bar');
+		});
+
+		it('should let you retrieve values via Network#get', function() {
+			user.set('bah', 'baz');
+			network.get('user.foo bah').should.equal('baz');
+		});
+
+		it('should let you retrieve values via Client#get', function() {
+			user.set('doh', 'dah');
+			client.get('network.foo user.foo doh').should.equal('dah');
+		});
+	});
+});

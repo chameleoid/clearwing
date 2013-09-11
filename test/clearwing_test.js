@@ -1,48 +1,36 @@
-var Clearwing = require('../lib/clearwing.js');
+var Clearwing = require('../lib/clearwing.js'),
+    should    = require('should');
 
-/*
-	======== A Handy Little Nodeunit Reference ========
-	https://github.com/caolan/nodeunit
+var client,
+    string = 'network.foo channel.#bar bah baz',
+    array  = [ { network: 'foo' }, { channel: '#bar' }, 'bah', 'baz' ];
 
-	Test methods:
-		test.expect(numAssertions)
-		test.done()
-	Test assertions:
-		test.ok(value, [message])
-		test.equal(actual, expected, [message])
-		test.notEqual(actual, expected, [message])
-		test.deepEqual(actual, expected, [message])
-		test.notDeepEqual(actual, expected, [message])
-		test.strictEqual(actual, expected, [message])
-		test.notStrictEqual(actual, expected, [message])
-		test.throws(block, [error], [message])
-		test.doesNotThrow(block, [error], [message])
-		test.ifError(value)
-*/
+describe('Clearwing', function() {
+	describe('.stringifyPropName', function() {
+		it('should parse an array that matches string', function() {
+			Clearwing.stringifyPropName(array).should.equal(string);
+		});
+	});
 
-var client, network;
-exports['clearwing'] = {
-	setUp: function(done) {
-		client = new Clearwing();
-		done();
-	},
+	describe('.parsePropName', function() {
+		it('should parse a string that matches array', function() {
+			Clearwing.parsePropName(string).should.eql(array);
+		});
+	});
 
-	'property stringifying/parsing': function(test) {
-		test.expect(2);
+	describe('#get and #set', function() {
+		before(function() {
+			client = new Clearwing();
+		});
 
-		var string = 'network.foo channel.#bar bah baz',
-		    array  = [ { network: 'foo' }, { channel: '#bar' }, 'bah', 'baz' ];
+		it('should return undefined for undefined properties', function() {
+			should.strictEqual(undefined, client.get('foo'));
+			should.notStrictEqual(null, client.get('foo'));
+		});
 
-		test.equal(Clearwing.stringifyPropName(array), string);
-		test.deepEqual(Clearwing.parsePropName(string), array);
-		test.done();
-	},
-
-	'getters and setters': function(test) {
-		test.expect(2);
-		test.equal(client.get('foo'), undefined);
-		client.set('foo', 'bar');
-		test.equal(client.get('foo'), 'bar');
-		test.done();
-	}
-};
+		it('should let you set and retrieve values', function() {
+			client.set('foo', 'bar');
+			client.get('foo').should.equal('bar');
+		});
+	});
+});

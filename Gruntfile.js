@@ -12,17 +12,37 @@ module.exports = function(grunt) {
 
 			dist: {
 				files: '<%= jshint.dist %>',
-				tasks: 'jshint:dist'
+				tasks: ['jshint:dist', 'mochacli:test']
 			},
 
 			test: {
 				files: '<%= jshint.test %>',
-				tasks: 'jshint:test'
+				tasks: ['jshint:test', 'mochacli:test']
 			}
 		},
 
-		nodeunit: {
-			dist: ['test/**/*_test.js']
+		mochacli: {
+			test: 'test/**/*_test.js'
+		},
+
+		karma: {
+			unit: {
+				hostname: '0.0.0.0',
+				browsers: ['Firefox', 'Chrome', 'PhantomJS']
+			},
+
+			phantom: {
+				singleRun: true,
+				browsers: ['PhantomJS']
+			},
+
+			options: {
+				reporters: 'dots',
+				frameworks: ['mocha', 'browserify'],
+				files: ['test/**/*_test.js'],
+				browserify: { watch: true },
+				preprocessors: { 'test/**/*.js': ['browserify'] }
+			}
 		},
 
 		jsdoc: {
@@ -40,6 +60,8 @@ module.exports = function(grunt) {
 			test: 'test/**/*.js',
 
 			options: {
+				curly: false,
+				eqeqeq: false,
 				immed: true,
 				latedef: true,
 				newcap: true,
@@ -48,23 +70,33 @@ module.exports = function(grunt) {
 				sub: true,
 				undef: true,
 				boss: true,
-				eqnull: false,
+				eqnull: true,
 				regexdash: true,
 				smarttabs: true,
 				strict: false,
+				browser: true,
 				node: true,
-				browser: true
+
+				globals: {
+					describe: false,
+					it: false,
+					before: false,
+					after: false,
+					beforeEach: false,
+					afterEach: false
+				}
 			}
-		}
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-nodeunit');
+	grunt.loadNpmTasks('grunt-mocha-cli');
+	grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('grunt-jsdoc');
 
 	// Default task.
 	grunt.registerTask('default', ['test', 'doc']);
-	grunt.registerTask('test', ['jshint', 'nodeunit']);
+	grunt.registerTask('test', ['jshint', 'mochacli', 'karma:phantom']);
 	grunt.registerTask('doc', ['jsdoc']);
 };

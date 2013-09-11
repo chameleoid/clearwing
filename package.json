@@ -1,7 +1,7 @@
 {
   "name": "clearwing",
   "description": "Node- and browser-side IRC client library",
-  "version": "0.0.1",
+  "version": "0.0.0-pre",
   "homepage": "https://github.com/rummik/clearwing",
   "author": {
     "name": "rummik",
@@ -34,8 +34,12 @@
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-watch": "~0.5.2",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-jsdoc": "~0.4.0"
+    "grunt-jsdoc": "~0.4.0",
+    "grunt-karma": "~0.6.2",
+    "karma-mocha": "~0.1.0",
+    "karma-browserify": "~0.0.4",
+    "grunt-mocha-cli": "~1.1.0",
+    "should": "~1.2.2"
   },
   "keywords": []
 }
