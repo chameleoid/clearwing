@@ -1,7 +1,6 @@
 var Clearwing = require('../lib/clearwing.js'),
     should    = require('should');
 
-
 var client, network;
 describe('Channel', function() {
 	before(function() {
