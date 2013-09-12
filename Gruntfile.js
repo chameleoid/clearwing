@@ -12,12 +12,12 @@ module.exports = function(grunt) {
 
 			dist: {
 				files: '<%= jshint.dist %>',
-				tasks: ['jshint:dist', 'mochacli:test', 'karma:unit:run']
+				tasks: ['jshint:dist', 'mochacli:test', 'karma:test:run']
 			},
 
 			test: {
 				files: '<%= jshint.test %>',
-				tasks: ['jshint:test', 'mochacli:test', 'karma:unit:run']
+				tasks: ['jshint:test', 'mochacli:test', 'karma:test:run']
 			}
 		},
 
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 		},
 
 		karma: {
-			unit: {
+			test: {
 				hostname: '0.0.0.0',
 				browsers: ['Firefox', 'Chrome', 'PhantomJS']
 			},
