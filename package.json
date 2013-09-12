@@ -1,45 +1,45 @@
 {
-  "name": "clearwing",
-  "description": "Node- and browser-side IRC client library",
-  "version": "0.0.0-def",
-  "homepage": "https://github.com/rummik/clearwing",
-  "author": {
-    "name": "rummik",
-    "email": "r@9k1.us"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/rummik/clearwing.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rummik/clearwing/issues"
-  },
-  "licenses": [
-    {
-      "type": "MPL",
-      "url": "https://github.com/rummik/clearwing/blob/master/LICENSE-MPL"
-    }
-  ],
-  "main": "lib/clearwing",
-  "engines": {
-    "node": ">=0.10"
-  },
-  "scripts": {
-    "test": "grunt test"
-  },
-  "dependencies": {
-    "underscore": "~1.5.1"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-watch": "~0.5.2",
-    "grunt-jsdoc": "~0.4.0",
-    "grunt-karma": "~0.6.2",
-    "karma-mocha": "~0.1.0",
-    "karma-browserify": "~0.0.4",
-    "grunt-mocha-cli": "~1.1.0",
-    "should": "~1.2.2"
-  },
-  "keywords": []
+	"name": "clearwing",
+	"description": "Node- and browser-side IRC client library",
+	"version": "0.0.0-def",
+	"homepage": "https://github.com/rummik/clearwing",
+	"author": {
+		"name": "rummik",
+		"email": "r@9k1.us"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/rummik/clearwing.git"
+	},
+	"bugs": {
+		"url": "https://github.com/rummik/clearwing/issues"
+	},
+	"licenses": [
+		{
+			"type": "MPL",
+			"url": "https://github.com/rummik/clearwing/blob/master/LICENSE-MPL"
+		}
+	],
+	"main": "lib/clearwing",
+	"engines": {
+		"node": ">=0.10"
+	},
+	"scripts": {
+		"test": "grunt test"
+	},
+	"dependencies": {
+		"underscore": "~1.5.1"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-jshint": "~0.6.3",
+		"grunt-contrib-watch": "~0.5.2",
+		"grunt-jsdoc": "~0.4.0",
+		"grunt-karma": "~0.6.2",
+		"karma-mocha": "~0.1.0",
+		"karma-browserify": "~0.0.4",
+		"grunt-mocha-cli": "~1.1.0",
+		"should": "~1.2.2"
+	},
+	"keywords": []
 }
