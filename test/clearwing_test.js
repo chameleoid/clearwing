@@ -50,7 +50,7 @@ describe('Clearwing', function() {
 		});
 
 		it('should thrown an error if fewer than two arguments are supplied', function() {
-			_.bind(client.emit, client, 'foo').should.throw('Clearwing#emit() expects at least two arguments');
+			_.bind(client.emit, client, 'foo').should.throw('#emit() expects at least two arguments');
 		});
 	});
 });
