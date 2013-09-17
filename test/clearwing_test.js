@@ -46,7 +46,7 @@ describe('Clearwing', function() {
 	describe('#emit', function() {
 		it('should work', function(done) {
 			client._events['test'] = [ function() { done(); } ];
-			client.emit('test', 'foo');
+			client.emit('test', {});
 		});
 
 		it('should thrown an error if fewer than two arguments are supplied', function() {
