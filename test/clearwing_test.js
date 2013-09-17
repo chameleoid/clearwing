@@ -52,5 +52,14 @@ describe('Clearwing', function() {
 		it('should thrown an error if fewer than two arguments are supplied', function() {
 			_.bind(client.emit, client, 'foo').should.throw('#emit() expects at least two arguments');
 		});
+
+		it('should return false if an event is not bound', function() {
+			client.emit('bar', {}).should.equal(false);
+		});
+
+		it('should return true if an event is bound', function() {
+			client.on('baz', function() {});
+			client.emit('baz', {}).should.equal(true);
+		});
 	});
 });
