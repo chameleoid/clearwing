@@ -19,19 +19,27 @@ describe('Clearwing', function() {
 		});
 	});
 
-	before(function() {
+	beforeEach(function() {
 		client = new Clearwing();
 	});
 
-	describe('#get and #set', function() {
+	describe('#get', function() {
 		it('should return undefined for undefined properties', function() {
 			should.strictEqual(undefined, client.get('foo'));
 			should.notStrictEqual(null, client.get('foo'));
 		});
 
-		it('should let you set and retrieve values', function() {
-			client.set('foo', 'bar');
+		it('should get Clearwing#_data[path]', function() {
+			client._data['foo'] = 'bar';
 			client.get('foo').should.equal('bar');
+		});
+	});
+
+	describe('#set', function() {
+		it('sets Clearwing#_data[path]', function() {
+			should.strictEqual(undefined, client._data['foo']);
+			client.set('foo', 'bar');
+			client._data['foo'].should.equal('bar');
 		});
 	});
 

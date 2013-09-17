@@ -3,8 +3,9 @@ var Clearwing = require('../lib/clearwing.js'),
 
 var client, network;
 describe('Channel', function() {
-	before(function() {
+	beforeEach(function() {
 		client = new Clearwing();
+		network = client.network('Foo');
 	});
 
 	describe('instantiation via Network#channel', function() {
@@ -23,24 +24,47 @@ describe('Channel', function() {
 		});
 	});
 
-	describe('#get and #set', function() {
-		before(function() {
-			network = client.network('Foo');
-		});
-
+	describe('#get', function() {
 		it('should return undefined for undefined properties', function() {
 			should.strictEqual(undefined, network.get('foo'));
 			should.notStrictEqual(null, network.get('foo'));
 		});
 
-		it('should let you set and retrieve values', function() {
-			network.set('foo', 'bar');
+		it('should get Clearwing#_data[path]', function() {
+			client._data['network.foo foo'] = 'bar';
 			network.get('foo').should.equal('bar');
 		});
 
+		it('should be case insensitive', function() {
+			client._data['network.foo foo'] = 'bar';
+			network.get('FOO').should.equal('bar');
+		});
+
 		it('should let you retrieve values via Client#get', function() {
-			network.set('doh', 'dah');
-			client.get('network.Foo doh').should.equal('dah');
+			network.set('foo', 'bar');
+			client.get('network.Foo foo').should.equal('bar');
+		});
+	});
+
+	describe('#set', function() {
+		it('sets Clearwing#_data[path]', function() {
+			network.set('foo', 'bar');
+			client._data['network.foo foo'].should.equal('bar');
+		});
+	});
+
+	describe('#on', function() {
+		it('sets Clearwing#_events[event]', function() {
+			var fn = function() {};
+			network.on('foo', fn);
+			client._events['network.foo foo'].should.eql([ fn ]);
+		});
+	});
+
+	describe('#emit', function() {
+		it('should trigger an event', function(done) {
+			client._events['network.foo foo'] = [ function() { done(); } ];
+			network.emit('foo', {});
 		});
 	});
 });
