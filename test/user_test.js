@@ -21,7 +21,7 @@ describe('User', function() {
 			var user1 = network.user('foo'),
 			    user2 = network.user('bar');
 
-			user1.should.not.eql(user2);
+			user1.should.not.equal(user2);
 		});
 	});
 

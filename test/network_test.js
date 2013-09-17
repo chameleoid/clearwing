@@ -20,7 +20,7 @@ describe('Network', function() {
 			var network1 = client.network('Foo'),
 			    network2 = client.network('Bar');
 
-			network1.should.not.eql(network2);
+			network1.should.not.equal(network2);
 		});
 	});
 

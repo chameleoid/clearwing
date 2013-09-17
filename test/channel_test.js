@@ -21,7 +21,7 @@ describe('Channel', function() {
 			var channel1 = network.channel('#foo'),
 			    channel2 = network.channel('#bar');
 
-			channel1.should.not.eql(channel2);
+			channel1.should.not.equal(channel2);
 		});
 	});
 
