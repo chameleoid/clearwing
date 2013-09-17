@@ -2,13 +2,13 @@ var Clearwing = require('../lib/clearwing.js'),
     should    = require('should');
 
 var client, network;
-describe('Channel', function() {
+describe('Network', function() {
 	beforeEach(function() {
 		client = new Clearwing();
 		network = client.network('Foo');
 	});
 
-	describe('instantiation via Network#channel', function() {
+	describe('instantiation via Client#network', function() {
 		it('should be case insensitive', function() {
 			var network1 = client.network('Foo'),
 			    network2 = client.network('foo');
