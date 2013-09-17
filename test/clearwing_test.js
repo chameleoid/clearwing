@@ -1,4 +1,5 @@
-var Clearwing = require('../lib/clearwing.js'),
+var _         = require('underscore'),
+    Clearwing = require('../lib/clearwing.js'),
     should    = require('should');
 
 var client,
@@ -18,11 +19,11 @@ describe('Clearwing', function() {
 		});
 	});
 
-	describe('#get and #set', function() {
-		before(function() {
-			client = new Clearwing();
-		});
+	before(function() {
+		client = new Clearwing();
+	});
 
+	describe('#get and #set', function() {
 		it('should return undefined for undefined properties', function() {
 			should.strictEqual(undefined, client.get('foo'));
 			should.notStrictEqual(null, client.get('foo'));
@@ -31,6 +32,25 @@ describe('Clearwing', function() {
 		it('should let you set and retrieve values', function() {
 			client.set('foo', 'bar');
 			client.get('foo').should.equal('bar');
+		});
+	});
+
+	describe('#on', function() {
+		it('sets Clearwing#_events[event]', function() {
+			var fn = function() {};
+			client.on('foo', fn);
+			client._events['foo'].should.eql([ fn ]);
+		});
+	});
+
+	describe('#emit', function() {
+		it('should work', function(done) {
+			client._events['test'] = [ function() { done(); } ];
+			client.emit('test', 'foo');
+		});
+
+		it('should thrown an error if fewer than two arguments are supplied', function() {
+			_.bind(client.emit, client, 'foo').should.throw('Clearwing#emit() expects at least two arguments');
 		});
 	});
 });
