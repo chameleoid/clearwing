@@ -45,6 +45,9 @@
       - [x] pass
       - [x] ssl
 
+    - [ ] send(command, ...params)
+    - [x] raw(message)
+
     - [x] connect()
     - [ ] disconnect()
     - [ ] reconnect()
@@ -59,7 +62,7 @@
       - [ ] quit -> user.quit
       - [ ] connect
       - [ ] ping
-      - [ ] raw
+      - [x] raw
 
   - [x] Channel
     - [x] client -> Clearwing
@@ -77,7 +80,7 @@
       - [x] topic
       - [x] mode
 
-    - [ ] join()
+    - [x] join()
     - [ ] part()
     - [ ] message()
     - [ ] notice()
