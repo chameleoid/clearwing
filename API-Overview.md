@@ -8,6 +8,8 @@
   - [x] set(prop, value)
   - [x] get(prop)
     - [x] nick
+    - [ ] ident
+    - [ ] realname
 
   - [x] emit(ev, data)
   - [x] on(ev, fn)
@@ -36,10 +38,14 @@
       - [x] connected
       - [x] status
       - [x] nick
+      - [ ] ident
+      - [ ] realname
       - [x] server
       - [x] port
+      - [x] pass
+      - [x] ssl
 
-    - [ ] connect()
+    - [x] connect()
     - [ ] disconnect()
     - [ ] reconnect()
 
