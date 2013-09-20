@@ -42,15 +42,15 @@
       - [ ] realname
       - [x] server
       - [x] port
-      - [x] pass
-      - [x] ssl
+      - [ ] pass
+      - [ ] ssl
 
-    - [ ] send(command, ...params)
-    - [x] raw(message)
+    - [x] send([buffer, ]command, ...params)
+    - [x] raw(message[, buffer])
 
     - [x] connect()
-    - [ ] disconnect()
-    - [ ] reconnect()
+    - [x] disconnect()
+    - [x] reconnect()
 
     - [x] emit(ev, data)
     - [x] on(ev, fn)
@@ -77,16 +77,17 @@
       - [ ] topic
     - [x] get(prop)
       - [x] joined
-      - [x] topic
-      - [x] mode
+      - [ ] topic
+      - [ ] mode
 
     - [x] join()
-    - [ ] part()
-    - [ ] message()
-    - [ ] notice()
-    - [ ] ctcp()
-    - [ ] kick(user)
-    - [ ] mode(user)
+    - [x] part()
+    - [x] message()
+    - [x] action()
+    - [x] notice()
+    - [x] ctcp()
+    - [x] kick(user(s), message)
+    - [ ] mode(modes)
 
     - [x] emit(ev, data)
     - [x] on(ev, fn)
@@ -112,10 +113,11 @@
       - [ ] name
       - [ ] mode
 
-    - [ ] message()
-    - [ ] notice()
-    - [ ] ctcp()
-    - [ ] ping()
+    - [x] message()
+    - [x] action()
+    - [x] notice()
+    - [x] ctcp()
+    - [ ] ping(cb)
 
     - [x] emit(ev, data)
     - [x] on(ev, fn)
