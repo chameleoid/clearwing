@@ -1,6 +1,6 @@
 - [x] Clearwing
   - [x] networks[] -> Network
-  - [x] network(network) -> Network
+  - [x] network(network[, ctx]) -> Network
   - [x] hasNetwork(network)
 
   - [x] use(function(client) { })
@@ -10,8 +10,10 @@
     - [x] nick
     - [ ] ident
     - [ ] realname
+    - [ ] reconnect
 
   - [x] emit(ev, data)
+  - [ ] once(ev, fn)
   - [x] on(ev, fn)
     - [ ] ctcp -> user/channel.ctcp
     - [ ] message -> user/channel.message
@@ -25,11 +27,11 @@
     - [x] client -> Clearwing
 
     - [x] channels[] -> Channel
-    - [x] chanel(channel) -> Channel
+    - [x] chanel(channel[, ctx]) -> Channel
     - [x] hasChannel(channel)
 
     - [x] users[] -> User
-    - [x] user(user) -> User
+    - [x] user(user[, ctx]) -> User
     - [x] hasUser(user)
 
     - [x] set(prop, value)
@@ -42,8 +44,9 @@
       - [ ] realname
       - [x] server
       - [x] port
-      - [ ] pass
+      - [ ] password
       - [ ] ssl
+      - [ ] autoconnect
 
     - [x] send([buffer, ]command, ...params)
     - [x] raw(message[, buffer])
@@ -53,6 +56,7 @@
     - [x] reconnect()
 
     - [x] emit(ev, data)
+    - [ ] once(ev, fn)
     - [x] on(ev, fn)
       - [ ] ctcp -> user/channel.ctcp
       - [ ] message -> user/channel.message
@@ -70,7 +74,7 @@
     - [x] network -> Network
 
     - [x] users[] -> User
-    - [x] user(user) -> User
+    - [x] user(user[, ctx]) -> User
     - [x] hasUser(user)
 
     - [x] set(prop, value)
@@ -79,6 +83,7 @@
       - [x] joined
       - [ ] topic
       - [ ] mode
+      - [ ] autojoin
 
     - [x] join()
     - [x] part()
@@ -90,6 +95,7 @@
     - [ ] mode(modes)
 
     - [x] emit(ev, data)
+    - [ ] once(ev, fn)
     - [x] on(ev, fn)
       - [ ] ctcp
       - [ ] message
@@ -105,7 +111,7 @@
     - [x] network -> Network
 
     - [x] channels[] -> Channel
-    - [x] channel(channel) -> Channel
+    - [x] channel(channel[, ctx]) -> Channel
     - [x] hasChannel(channel)
 
     - [x] set(prop, value)
@@ -120,6 +126,7 @@
     - [ ] ping(cb)
 
     - [x] emit(ev, data)
+    - [ ] once(ev, fn)
     - [x] on(ev, fn)
       - [ ] ctcp
       - [ ] message
