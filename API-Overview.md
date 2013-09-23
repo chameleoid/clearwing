@@ -16,11 +16,12 @@
   - [ ] once(ev, fn)
   - [x] on(ev, fn)
     - [ ] ctcp -> user/channel.ctcp
-    - [ ] message -> user/channel.message
-    - [ ] notice -> user/channel.notice
-    - [ ] join -> channel.join
-    - [ ] part -> channel.part
+    - [x] message -> user/channel.message
+    - [x] notice -> user/channel.notice
+    - [x] join -> channel.join
+    - [x] part -> channel.part
     - [ ] quit -> user.quit
+    - [x] connect -> network.connect
     - [ ] raw
 
   - [x] Network
@@ -59,13 +60,13 @@
     - [ ] once(ev, fn)
     - [x] on(ev, fn)
       - [ ] ctcp -> user/channel.ctcp
-      - [ ] message -> user/channel.message
-      - [ ] notice -> user/channel.notice
-      - [ ] join -> channel.join
-      - [ ] part -> channel.part
+      - [x] message -> user/channel.message
+      - [x] notice -> user/channel.notice
+      - [x] join -> channel.join
+      - [x] part -> channel.part
       - [ ] quit -> user.quit
-      - [ ] connect
-      - [ ] ping
+      - [x] connect
+      - [x] ping
       - [x] raw
 
   - [x] Channel
@@ -83,7 +84,7 @@
       - [x] joined
       - [ ] topic
       - [ ] mode
-      - [ ] autojoin
+      - [x] autojoin
 
     - [x] join()
     - [x] part()
@@ -98,10 +99,11 @@
     - [ ] once(ev, fn)
     - [x] on(ev, fn)
       - [ ] ctcp
-      - [ ] message
-      - [ ] notice
-      - [ ] join
-      - [ ] part
+      - [ ] topic
+      - [x] message
+      - [x] notice
+      - [x] join
+      - [x] part
       - [ ] quit -> user.quit
       - [ ] raw
 
@@ -129,7 +131,7 @@
     - [ ] once(ev, fn)
     - [x] on(ev, fn)
       - [ ] ctcp
-      - [ ] message
-      - [ ] notice
-      - [ ] quit
+      - [x] message
+      - [x] notice
+      - [x] quit
       - [ ] raw
