@@ -1,4 +1,10 @@
+*.log
+*~
+
 node_modules
+vendor
+
 docs
-npm-debug.log
-bin
+tmp
+
+_vimrc_local.vim

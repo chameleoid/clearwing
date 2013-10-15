@@ -1,6 +1,14 @@
-# Clearwing [![Build Status](https://travis-ci.org/rummik/clearwing.png?branch=master)](https://travis-ci.org/rummik/clearwing) [![Dependency Status](https://gemnasium.com/rummik/clearwing.png)](https://gemnasium.com/rummik/clearwing) [![](http://badgr.co/gittip/rummik.png)](https://www.gittip.com/rummik/)
-
+Clearwing [![Builds][]][travis] [![Deps][]][gemnasium] [![Donations][]][gittip]
+=========
 Server- and browser-side IRC client library
+
+[Builds]: https://travis-ci.org/rummik/clearwing.png "Build Status"
+[travis]: https://travis-ci.org/rummik/clearwing
+[Deps]: https://gemnasium.com/rummik/clearwing.png "Dependency Status"
+[gemnasium]: https://gemnasium.com/rummik/clearwing
+[Donations]: http://badgr.co/gittip/rummik.png
+[gittip]: https://www.gittip.com/rummik/
+
 
 ## Getting Started
 ### On the server
@@ -9,17 +17,28 @@ _(Coming soon)_
 ### In the browser
 _(Coming soon)_
 
+
 ## Documentation
 _(Coming soon)_
+
 
 ## Examples
 _(Coming soon)_
 
+
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](http://gruntjs.com/).
+Please see the [Chameleoid Styleguide][] before contributing.
+
+Take care to maintain the existing coding style.  Add unit tests for any new or
+changed functionality.  Lint and test your code using [Grunt][].
+
+[Chameleoid Styleguide]: https://github.com/chameleoid/style
+[Grunt]: http://gruntjs.com/
+
 
 ## Release History
 _(Nothing yet)_
+
 
 ## License
 Copyright (c) 2013 rummik
