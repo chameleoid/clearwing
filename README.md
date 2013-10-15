@@ -2,10 +2,10 @@ Clearwing [![Builds][]][travis] [![Deps][]][gemnasium] [![Donations][]][gittip]
 =========
 Server- and browser-side IRC client library
 
-[Builds]: https://travis-ci.org/rummik/clearwing.png "Build Status"
-[travis]: https://travis-ci.org/rummik/clearwing
-[Deps]: https://gemnasium.com/rummik/clearwing.png "Dependency Status"
-[gemnasium]: https://gemnasium.com/rummik/clearwing
+[Builds]: https://travis-ci.org/chameleoid/clearwing.png "Build Status"
+[travis]: https://travis-ci.org/chameleoid/clearwing
+[Deps]: https://gemnasium.com/chameleoid/clearwing.png "Dependency Status"
+[gemnasium]: https://gemnasium.com/chameleoid/clearwing
 [Donations]: http://badgr.co/gittip/rummik.png
 [gittip]: https://www.gittip.com/rummik/
 
@@ -41,5 +41,5 @@ _(Nothing yet)_
 
 
 ## License
-Copyright (c) 2013 rummik
+Copyright (c) 2013
 Licensed under the MPL license.

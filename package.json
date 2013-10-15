@@ -1,23 +1,23 @@
 {
 	"name": "clearwing",
 	"description": "Node- and browser-side IRC client library",
-	"version": "0.0.3",
-	"homepage": "https://github.com/rummik/clearwing",
+	"version": "0.0.4",
+	"homepage": "https://github.com/chameleoid/clearwing",
 	"author": {
 		"name": "rummik",
 		"email": "r@9k1.us"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/rummik/clearwing.git"
+		"url": "git://github.com/chameleoid/clearwing.git"
 	},
 	"bugs": {
-		"url": "https://github.com/rummik/clearwing/issues"
+		"url": "https://github.com/chameleoid/clearwing/issues"
 	},
 	"licenses": [
 		{
 			"type": "MPL",
-			"url": "https://github.com/rummik/clearwing/blob/master/LICENSE-MPL"
+			"url": "https://github.com/chameleoid/clearwing/blob/master/LICENSE.md"
 		}
 	],
 	"main": "lib/clearwing",
