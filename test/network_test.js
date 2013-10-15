@@ -1,8 +1,12 @@
-var Clearwing = require('../lib/clearwing.js'),
-    should    = require('should');
+var Clearwing = require('../lib/clearwing.js');
+var should = require('should');
 
-var client, network;
 describe('Network', function() {
+	'use strict';
+
+	var client;
+	var network;
+
 	beforeEach(function() {
 		client = new Clearwing();
 		network = client.network('Foo');
@@ -10,15 +14,15 @@ describe('Network', function() {
 
 	describe('instantiation via Client#network', function() {
 		it('should be case insensitive', function() {
-			var network1 = client.network('Foo'),
-			    network2 = client.network('foo');
+			var network1 = client.network('Foo');
+			var network2 = client.network('foo');
 
 			network1.should.equal(network2);
 		});
 
 		it('should instantiate multiple networks', function() {
-			var network1 = client.network('Foo'),
-			    network2 = client.network('Bar');
+			var network1 = client.network('Foo');
+			var network2 = client.network('Bar');
 
 			network1.should.not.equal(network2);
 		});

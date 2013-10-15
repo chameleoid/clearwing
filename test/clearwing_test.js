@@ -1,26 +1,32 @@
-var _         = require('underscore'),
-    Clearwing = require('../lib/clearwing.js'),
-    should    = require('should');
+var _ = require('underscore');
+var Clearwing = require('../lib/clearwing.js');
+var should = require('should');
 
-var client,
-    string = 'network.foo channel.#bar bah baz',
-    array  = [ { network: 'foo' }, { channel: '#bar' }, 'bah', 'baz' ];
 
 describe('Clearwing', function() {
-	describe('.stringifyPropName', function() {
-		it('should parse an array that matches string', function() {
-			Clearwing.stringifyPropName(array).should.equal(string);
-		});
-	});
+	'use strict';
 
-	describe('.parsePropName', function() {
-		it('should parse a string that matches array', function() {
-			Clearwing.parsePropName(string).should.eql(array);
-		});
-	});
+	var client;
 
 	beforeEach(function() {
 		client = new Clearwing();
+	});
+
+	describe('prop names', function() {
+		var string = 'network.foo channel.#bar bah baz';
+		var array = [ { network: 'foo' }, { channel: '#bar' }, 'bah', 'baz' ];
+
+		describe('.stringifyPropName', function() {
+			it('should parse an array that matches string', function() {
+				Clearwing.stringifyPropName(array).should.equal(string);
+			});
+		});
+
+		describe('.parsePropName', function() {
+			it('should parse a string that matches array', function() {
+				Clearwing.parsePropName(string).should.eql(array);
+			});
+		});
 	});
 
 	describe('#get', function() {
