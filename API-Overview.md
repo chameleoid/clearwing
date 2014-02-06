@@ -118,7 +118,9 @@
 
     - [x] set(prop, value)
     - [x] get(prop)
-      - [ ] name
+      - [ ] nick
+      - [ ] ident
+      - [ ] host
       - [ ] mode
 
     - [x] message()
